@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "geekbrains_c_sharp/1.0.0": {
+        "runtime": {
+          "geekbrains_c_sharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "geekbrains_c_sharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
