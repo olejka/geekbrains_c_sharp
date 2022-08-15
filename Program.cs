@@ -1,27 +1,12 @@
-﻿Console.WriteLine("Number a:");
+﻿Console.WriteLine("pls enter a number:");
 int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Number b:");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Number c:");
-int c = Convert.ToInt32(Console.ReadLine());
-int max = 0;
-if(a > b)
+
+if ((a % 2) == 0)
 {
-    if(a > c)
-    {
-        max = a;
-    }
-    else
-    {
-        max = c;
-    }
-}
-else if(b > c)
-{
-    max = b;
+    Console.WriteLine("yes");
 }
 else
 {
-    max = c;
+    Console.WriteLine("no");
 }
-Console.WriteLine("max = " + max);
+
