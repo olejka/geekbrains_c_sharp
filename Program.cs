@@ -1,9 +1,10 @@
-﻿Console.WriteLine("Enter a three-digit number.\nTo exit the program, click Exit.");
-    while(true)
+﻿Console.WriteLine("Enter a three-digit number:");
+int n = Convert.ToInt32(Console.ReadLine());
+if(n>99)
     {
-        string input = Console.ReadLine();
-        if(!input.Equals("exit"))
-            Console.WriteLine("Second number: {1}",input, input[1]);
-        else
-            break;
+        Console.WriteLine(n.ToString()[2]);
+    }
+    else
+    {
+        Console.WriteLine("no third digit");
     }
