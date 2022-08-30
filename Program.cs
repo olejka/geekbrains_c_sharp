@@ -1,35 +1,14 @@
-﻿using System;
- 
-namespace Palindrom
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int number = 0;
-            while (true)
-            {
-                Console.Write("Введите число: ");
-                if (int.TryParse(Console.ReadLine(), out number)) 
-                    break;
-                else
-                    Console.WriteLine("Неверное число.");
-            }
-            int oldValue = number;
-            int newValue = 0;
-            while (number > 0)
-            {
-                int dig = number % 10;
-                newValue = newValue * 10 + dig;
-                number = number / 10;
-            }
-            if (newValue == oldValue)
-                Console.WriteLine("Да");
-            else
-                Console.WriteLine("Нет");
-            Console.Write("Нажмите любую клавишу...");
-            Console.ReadKey();
-        }
-    }
+﻿Console.Write("Введите число: ");
+string? number = Console.ReadLine();
+
+void CheckingNumber(string number){
+  if (number[0]==number[4] || number[1]==number[3]){
+    Console.WriteLine($"Ваше число: {number} - палиндром.");
+  }
+  else Console.WriteLine($"Ваше число: {number} - не палиндром.");
 }
 
+if (number!.Length == 5){
+  CheckingNumber(number);
+}
+else Console.WriteLine($"Введите правильное число");
