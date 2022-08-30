@@ -1,14 +1,19 @@
-﻿Console.Write("Введите число: ");
-string? number = Console.ReadLine();
+﻿Console.Write("Введите число N: ");
+int numberN = Convert.ToInt32(Console.ReadLine());
 
-void CheckingNumber(string number){
-  if (number[0]==number[4] || number[1]==number[3]){
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
+  int SumNumber(int numberN){
+    
+    int counter = Convert.ToString(numberN).Length;
+    int advance = 0;
+    int result = 0;
+
+    for (int i = 0; i < counter; i++){
+      advance = numberN - numberN % 10;
+      result = result + (numberN - advance);
+      numberN = numberN / 10;
+    }
+   return result;
   }
-  else Console.WriteLine($"Ваше число: {number} - не палиндром.");
-}
 
-if (number!.Length == 5){
-  CheckingNumber(number);
-}
-else Console.WriteLine($"Введите правильное число");
+int sumNumber = SumNumber(numberN);
+Console.WriteLine("Сумма цифр в числе: " + sumNumber);
