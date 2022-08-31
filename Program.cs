@@ -1,14 +1,38 @@
-﻿Console.Write("Введите число: ");
-string? number = Console.ReadLine();
+﻿Console.Write("Введите m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите n: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
-void CheckingNumber(string number){
-  if (number[0]==number[4] || number[1]==number[3]){
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
+Console.Clear();
+Console.WriteLine($"m = {m}, n = {n}.");
+
+double[,] array = new double[m, n];
+
+CreateArrayDouble(array);
+
+WriteArray(array);
+
+Console.WriteLine();
+
+void CreateArrayDouble(double[,] array)
+{
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      array[i, j] = new Random().NextDouble() * 20 - 10;
+    }
   }
-  else Console.WriteLine($"Ваше число: {number} - не палиндром.");
 }
 
-if (number!.Length == 5){
-  CheckingNumber(number);
+void WriteArray (double[,] array){
+for (int i = 0; i < m; i++)
+  {
+      for (int j = 0; j < n; j++)
+      {
+        double alignNumber = Math.Round(array[i, j], 1);
+        Console.Write(alignNumber + " ");
+      }
+      Console.WriteLine();
+  }
 }
-else Console.WriteLine($"Введите правильное число");
