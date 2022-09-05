@@ -1,14 +1,25 @@
-﻿Console.Clear();
+﻿//Console.Clear();
+int m = InputNumbers("Введите m: ");
 int n = InputNumbers("Введите n: ");
-int count = 2;
-PrintNumber(n, count);
-Console.Write(1);
+int temp = m;
 
-void PrintNumber(int n, int count)
+if (m > n) 
 {
-  if (count > n) return;
-  PrintNumber(n, count + 1);
-  Console.Write(count + ", ");
+  m = n; 
+  n = temp;
+}
+
+PrintSumm(m, n, temp=0);
+
+void PrintSumm(int m, int n, int summ)
+{
+  summ = summ + n;
+  if (n <= m)
+  {
+    Console.Write($"Сумма элементов= {summ} ");
+    return;
+  }
+  PrintSumm(m, n - 1, summ);
 }
 
 int InputNumbers(string input) 
